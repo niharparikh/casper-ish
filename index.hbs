@@ -37,12 +37,13 @@ into the {body} of the default.hbs template --}}
 <script src='{{asset "js/core.js"}}'></script>
 <script type="text/javascript">
     const typewriter = new Typewriter('#typewriter', {
-      loop: false,
+      loop: true,
+      cursor: "~",
     });
 
-    typewriter.typeString("Hello stranger!")
+    typewriter.typeString("Hello stranger! ")
       .pauseFor(1000)
-      .typeString(" I'm Nihar!")
+      .typeString("I'm Nihar!")
       .pauseFor(2000)
       .deleteChars(1)
       .typeString(" Parikh!")
