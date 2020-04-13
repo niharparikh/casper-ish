@@ -8,7 +8,7 @@ into the {body} of the default.hbs template --}}
             {{> "site-nav"}}
             <div class="site-header-content">
                 <h1 id="typewriter" class="site-title"></h1>
-                <h2 class="site-description"><br>I help technology leaders identify growth opportunities at KPMG Strategy. I also occasionally write about <a href="https://nparikh.me/tag/ecosystems/">&#x1F387 emerging ecosystems</a>, <a href="https://nparikh.me/tag/gtm-strategies/">&#x1F680 go-to-market strategies</a>, <a href="https://nparikh.me/tag/entrepreneurship/">&#x1F937 entrepreneurship</a>, and other <a href="https://nparikh.me/tag/other/">&#x1F32F &#x1F4FA &#x1F3B5 stuff</a>.</h2>
+                <h2 class="site-description"><br><strong>Current:</strong> help technology leaders identify growth opportunities at KPMG Strategy. <strong>Past:</strong> growth at early-stage startups, advisor for Series A raisings, founder of Emory's startup incubator. I also occasionally <strong>write</strong> about <a href="https://nparikh.me/tag/trends/">&#x1F387 market trends</a>, <a href="https://nparikh.me/tag/fundings/">&#x1F937 startup fundings</a>, <a href="https://nparikh.me/tag/gtm-strategies/">&#x1F680 go-to-market strategies</a>, and other <a href="https://nparikh.me/tag/other/">&#x1F32F &#x1F4FA &#x1F3B5 stuff</a>.</h2>
             </div>
         </div>
     </div>
@@ -37,13 +37,14 @@ into the {body} of the default.hbs template --}}
 <script src='{{asset "js/core.js"}}'></script>
 <script type="text/javascript">
     const typewriter = new Typewriter('#typewriter', {
-      loop: true,
+      loop: false,
       cursor: "~",
     });
 
-    typewriter.typeString("Hello stranger! ")
-      .pauseFor(2000)
-      .typeString("I'm Nihar!")
+    typewriter.typeString("Hello stranger")
+      .pauseFor(500)
+      .deleteChars(8)
+      .typeString("friend, I'm Nihar!")
       .pauseFor(500)
       .deleteChars(1)
       .typeString(" Parikh!")
