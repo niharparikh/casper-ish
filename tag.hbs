@@ -9,7 +9,7 @@
             <h1 class="site-title">{{name}}</h1>
             <h2 class="site-description">
                 {{#if description}}
-                {{description}}
+                {{description}}<br><i># {{plural ../pagination.total empty='posts' singular='% post' plural='% posts'}}</i>
                 {{else}}
                 A collection of {{plural ../pagination.total empty='posts' singular='% post' plural='% posts'}}
                 {{/if}}
