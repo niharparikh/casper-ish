@@ -19,20 +19,24 @@
             <h1 class="post-full-title">{{title}}</h1>
         </header>
 
-        {{#get 'tags' limit='all' include='count.posts' order='count.posts desc'}}
-        {{#foreach tags}}
-            <a href='{{ url }}'>
-            <h2>{{ name }} <small>({{ count.posts }})</small></h2>
-            </a>
-            <div class="post-feed">
-            {{#foreach posts}}
-                {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-                {{> "post-card"}}
+        <section class="post-full-content">
+            <div class="post-content">
+                {{content}}
+            </div>
+            {{#get 'tags' limit='all' include='count.posts' order='count.posts desc'}}
+            {{#foreach tags}}
+                <a href='{{ url }}'>
+                <h2>{{ name }} <small>({{ count.posts }})</small></h2>
+                </a>
+                <div class="post-feed">
+                {{#foreach posts}}
+                    {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+                    {{> "post-card"}}
+                {{/foreach}}
+                </div>
             {{/foreach}}
-        </div>
-        {{/foreach}}
-        {{/get}}
-
+            {{/get}}
+        </section>
     </div>
 </main>
 
