@@ -2,42 +2,43 @@
 {{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
 
 {{!-- The big featured header, it uses blog cover image as a BG if available --}}
-<header class="site-header">
+<header class="site-archive-header">
     <div class="outer site-nav-main">
         <div class="inner">
             {{> "site-nav"}}
         </div>
     </div>
+    {{> header-background background=feature_image}} {{!--Special header-image.hbs partial to generate the background image--}}
+    <div class="inner site-header-content">
+        <h1 class="site-title">Writing</h1>
+        <h2 class="site-description">
+            Just some of my thoughts. Love to discuss / debate so <a href="https://nparikh.me/contact/">reach out</a> anytime!
+        </h2>
+    </div>
+    </div>
 </header>
 
-{{!-- Everything inside the #post tags pulls data from the post --}}
-{{#post}}
-
+{{!-- The main content area --}}
 <main id="site-main" class="site-main outer">
-    <div class="inner">
-        <header class="post-full-header">
-            <h1 class="post-full-title">{{title}}</h1>
-        </header>
-
-        <section class="post-full-content">
-            <div class="post-content">
-                {{content}}
-            </div>
+    <style>
+    .box-page-writing {
+        margin-top: -6vw;
+    }
+      
+    @media (min-width: 900px) {
+      .box-page-writing {
+        margin-top: -6vw;
+      }
+    }
+    </style>
+    <div class="inner posts box-page-writing">
+        <div class="post-feed">
             {{#get 'tags' limit='all' include='count.posts' order='count.posts desc'}}
             {{#foreach tags}}
-                <a href='{{ url }}'>
-                <h2>{{ name }} <small>({{ count.posts }})</small></h2>
-                </a>
-                <div class="post-feed">
-                {{#foreach posts}}
-                    {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-                    {{> "post-card"}}
-                {{/foreach}}
-                </div>
+                {{!-- The tag below includes the markup for each tag - partials/tag-card.hbs --}}
+                {{> "tag-card"}}
             {{/foreach}}
             {{/get}}
-        </section>
+        </div>
     </div>
 </main>
-
-{{/post}}
