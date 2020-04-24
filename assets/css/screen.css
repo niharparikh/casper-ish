@@ -152,11 +152,11 @@ body {
     z-index: 100;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: left;
+    align-items: left;
     padding: 6vw 3vw;
     min-height: 200px;
-    max-height: 340px;
+    max-height: 400px;
 }
 
 .site-title {
@@ -212,12 +212,19 @@ body {
 }
 
 .site-home-header .site-header-content {
-    padding: 5vw 3vw 6vw;
+    padding: 3vw 3vw 6vw;
+}
+
+.site-home-header .site-header-content img {
+    display: inline-block;
+    background: none;
+    width: 200px;
+    height: 200px;
 }
 
 .site-home-header .site-title {
     font-size: 5.5rem;
-    text-align: center;
+    text-align: left;
 }
 
 .site-home-header .site-description {
@@ -227,7 +234,7 @@ body {
 
 @media (max-width: 1170px) {
     .site-home-header .site-description {
-        font-size: 2.2rem;
+        font-size: 2.1rem;
     }
 }
 
@@ -2789,7 +2796,7 @@ Usage (In Ghost editor):
 .site-footer {
     position: relative;
     padding-top: 20px;
-    padding-bottom: 60px;
+    padding-bottom: 30px;
     color: #fff;
     background: color(var(--darkgrey) l(-5%));
 }
@@ -2850,6 +2857,7 @@ Usage (In Ghost editor):
 
 /* 12. Dark Mode
 /* ---------------------------------------------------------- */
+/* 
 @media (prefers-color-scheme: dark) {
     body {
         color: rgba(255, 255, 255, 0.75);
@@ -3067,7 +3075,7 @@ Usage (In Ghost editor):
     .subscribe-form .success .message-success {
         color: color(var(--green) l(+5%) s(-5%));
     }
-}
+} */
 
 /* 12. Contact Form
 /* ---------------------------------------------------------- */
