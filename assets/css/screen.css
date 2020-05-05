@@ -231,8 +231,9 @@ body {
     border-bottom: 4px solid var(--midgrey);
 }
 
-.site-home-header .site-header-content img {
-    background: var(--bgcolor);
+.site-home-header .site-header-content img, .site-home-header .site-header-content canvas {
+    background-color: var(--bgcolor);
+    mix-blend-mode: multiply;
     width: auto;
     height: 100%;
     /*border-bottom: 3px solid var(--darkgrey);*/ 
@@ -260,27 +261,81 @@ body {
 
 @media (max-width: 1170px) {
     .site-home-header .site-header-content .site-description {
-        font-size: 1.8rem;
+        font-size: 1.7rem;
+    }
+
+    .site-home-header .site-header-content .site-supertitle {
+        font-size: 1.7rem;
+    }
+
+    .site-home-header .site-header-content .site-title {
+        font-size: 4.4rem;
     }
 }
 
-@media (max-width: 650px) { 
+@media (max-width: 800px) { 
+    
+    .site-home-header .site-header-content {
+        max-height: 460px;
+    }
+
     .site-home-header .site-header-content .left-col {
         display: none;
     }
 
     .site-home-header .site-header-content .right-col {
         padding-left: 0px;
+        padding-bottom: 20px;
+    }
+
+    .site-home-header .site-header-content .site-description {
+        font-size: 1.7rem;
+    }
+
+    .site-home-header .site-header-content .site-supertitle {
+        font-size: 1.7rem;
+    }
+
+    .site-home-header .site-header-content .site-title {
+        font-size: 4.2rem;
+    }
+}
+
+@media (max-width: 650px) { 
+    .site-home-header .site-header-content {
+        max-height: 460px;
+    }
+
+    .site-home-header .site-header-content .left-col {
+        display: none;
+    }
+
+    .site-home-header .site-header-content .right-col {
+        padding-left: 0px;
+        padding-bottom: 20px;
     }
 
     .site-home-header .site-header-content .site-description {
         font-size: 1.6rem;
     }
+
+    .site-home-header .site-header-content .site-supertitle {
+        font-size: 1.6rem;
+    }
+
+    .site-home-header .site-header-content .site-title {
+        font-size: 4.0rem;
+    }
 }
 
 @media (max-width: 500px) {
+    .site-home-header .site-header-content {
+        max-height: 460px;
+    }
+
     .site-home-header .site-header-content .right-col {
         padding-left: 0px;
+        padding-bottom: 20px;
     }
 
     .site-home-header .site-header-content .left-col {
@@ -288,7 +343,15 @@ body {
     }
 
     .site-home-header .site-header-content .site-description {
-        font-size: 1.4rem;
+        font-size: 1.6rem;
+    }
+
+    .site-home-header .site-header-content .site-supertitle {
+        font-size: 1.6rem;
+    }
+
+    .site-home-header .site-header-content .site-title {
+        font-size: 4.0rem;
     }
 }
 
@@ -333,14 +396,24 @@ body {
     }
 }
 
+@media (max-width: 650px) {
+    .site-archive-header .site-header-content {
+        padding: 16vw 0 20px;
+    }
+}
+
 @media (max-width: 500px) {
-    .site-home-header .site-header-content .site-title {
+    .site-archive-header .site-header-content {
+        padding: 16vw 0 20px;
+    }
+
+    /*.site-home-header .site-header-content .site-title {
         font-size: 3.2rem;
     }
 
     .site-home-header .site-header-content .site-description {
         font-size: 1.8rem;
-    }
+    }*/
 
     .site-archive-header .site-header-content {
         min-height: unset;
@@ -783,6 +856,8 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 
 .post-card-excerpt p {
     margin-bottom: 1em;
+    font-size: 1.6rem;
+    line-height: 1.3em;
 }
 
 .post-card-meta {
@@ -866,7 +941,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     flex: 1 1 50%;
     display: flex;
     flex-direction: column;
-    margin: 2px 0 0 6px;
+    /* margin: 2px 0 0 6px; */
     color: color(var(--midgrey) l(+10%));
     font-size: 1.2rem;
     line-height: 1.4em;
@@ -1066,6 +1141,12 @@ make sure this only happens on large viewports / desktop-ish devices.
 .post-full-title {
     margin: 0 0 0.1em;
     color: color(var(--darkgrey) l(-5%));
+}
+
+@media (max-width: 900px) {
+    .post-full-title {
+        font-size: 4.5rem;
+    }
 }
 
 .post-full-custom-excerpt {

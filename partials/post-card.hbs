@@ -31,16 +31,16 @@
 
             <section class="post-card-excerpt">
                 {{#if feature_image}}
-                    <p>{{excerpt words="30"}}</p>
+                    <p>{{excerpt words="30"}} ...</p>
                 {{else}}
-                    <p>{{excerpt words="44"}}</p>
+                    <p>{{excerpt words="44"}} ...</p>
                 {{/if}}
             </section>
 
         </a>
 
         <footer class="post-card-meta">
-            <ul class="author-list">
+            <!-- <ul class="author-list">
                 {{#foreach authors}}
                 <li class="author-list-item">
             
@@ -57,9 +57,9 @@
                     {{/if}}
                 </li>
                 {{/foreach}}
-            </ul>
+            </ul> -->
             <div class="post-card-byline-content">
-                <span>{{#has author="count:>2"}}Multiple authors{{else}}{{authors}}{{/has}}</span>
+                <!-- <span>{{#has author="count:>2"}}Multiple authors{{else}}{{authors}}{{/has}}</span> -->
                 <span class="post-card-byline-date"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time> <span class="bull">&bull;</span> {{reading_time}}</span>
             </div>
         </footer>
