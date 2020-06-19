@@ -8,7 +8,7 @@ into the {body} of the default.hbs template --}}
             {{> "site-nav"}}
             <div class="site-header-content">
                 <div class="left-col">
-                    <img id="breathing-halftone" src="{{asset 'images/face-removebg.jpg'}}" />
+                    <img style="filter:opacity(90%);" id="breathing-halftone" src="{{asset 'images/face1.jpg'}}" />
                 </div>
                 <div class="right-col">
                     <h2 class="site-supertitle">Hi, my name is ...</h2>
@@ -41,7 +41,7 @@ into the {body} of the default.hbs template --}}
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
 {{#contentFor "scripts"}}
 <script src='{{asset "js/core.js"}}'></script>
-<script src='{{asset "js/breathing-halftone.js"}}'></script>
+<!-- <script src='{{asset "js/breathing-halftone.js"}}'></script> -->
 <script type="text/javascript">
     const typewriter = new Typewriter('#typewriter', {
       loop: false,
@@ -53,20 +53,20 @@ into the {body} of the default.hbs template --}}
       .typeString(" Parikh ")
       .start();
 
-    var face_img = document.querySelector('#breathing-halftone');
+    /* var face_img = document.querySelector('#breathing-halftone');
 
     new BreathingHalftone(face_img, {
-        dotSize: 1/140,
+        dotSize: 1/120,
         dotSizeThreshold: 0.01,
-        initVelocity: 0.7,
-        oscPeriod: 2,
+        initVelocity: 0.5,
+        oscPeriod: 1,
         channels: [ 'red', 'green', 'blue' ],
         friction: 0.25,
         hoverDiameter: 0.4,
-        hoverForce: 0.01,
+        hoverForce: -0.01,
         activeDiameter: -0.4,
         activeForce: 0.004
-    });
+    }); */
 
 </script>
 <script>
