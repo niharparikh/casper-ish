@@ -127,7 +127,7 @@ body {
     left: 0;
     z-index: 10;
     display: block;
-    background: rgba(0,0,0,0.0);
+    background: rgba(0,0,0,0.18);
 }
 
 .site-header-background:after {
@@ -140,7 +140,7 @@ body {
     z-index: 10;
     display: block;
     height: 140px;
-    background: linear-gradient(rgba(0,0,0,0.0),rgba(0,0,0,0));
+    background: linear-gradient(rgba(0,0,0,0.15),rgba(0,0,0,0));
 }
 
 .site-header-background.no-image:before,
@@ -156,7 +156,7 @@ body {
     justify-content: left;
     align-items: left;
     padding: 6vw 3vw;
-    min-height: 200px;
+    min-height: 300px;
     max-height: 440px;
 }
 
@@ -382,16 +382,17 @@ body {
 
 @media (max-width: 500px) {
     .site-home-header .site-header-content {
-        max-height: 460px;
+        max-height: 500px;
+    }
+
+    .site-home-header .site-header-content .left-col {
+        display: none;
     }
 
     .site-home-header .site-header-content .right-col {
         padding-left: 0px;
         padding-bottom: 20px;
-    }
-
-    .site-home-header .site-header-content .left-col {
-        display: none;
+        height: 350px;
     }
 
     .site-home-header .site-header-content .site-description {
@@ -410,6 +411,10 @@ body {
 
 /* 4.2 Archive header (tag and author post lists)
 /* ---------------------------------------------------------- */
+
+.site-archive-header .site-header-background {
+    background: color-mod(var(--darkgrey) l(-10%)) no-repeat center center;
+}
 
 .site-archive-header .site-header-content {
     flex-direction: column;
@@ -3281,8 +3286,14 @@ Usage (In Ghost editor):
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serif;
     font-size: 0.8em;
-    outline: 1px solid grey;
 }
+
+.contact-form textarea,
+.contact-form input[type="text"],
+.contact-form input[type="email"] {
+	outline: 1px solid var(--darkgrey);
+}
+
 .contact-form input:focus,
 .contact-form textarea:focus {
     outline: 1px solid #3eb0ef;
@@ -3304,7 +3315,7 @@ Usage (In Ghost editor):
     grid-column-start: 2;
     justify-self: end;
     margin-top: 0.6em;
-    background: #3eb0ef;
+    background: var(--darkgrey);
     color: white;
     width: auto;
 }
