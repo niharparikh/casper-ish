@@ -110,9 +110,7 @@ into the {body} of the default.hbs template --}}
             </section>
 
             {{!-- Email subscribe form at the bottom of the page --}}
-            {{#if @labs.members}}
                 {{> subscribe-form}}
-            {{/if}}
 
             {{!--
             <section class="post-full-comments">
@@ -130,7 +128,7 @@ into the {body} of the default.hbs template --}}
     <div class="inner">
         <div class="read-next-feed">
             {{#if primary_tag}}
-            {{#get "posts" filter="tags:{{primary_tag.slug}}+id:-{{id}}" limit="3" as |related_posts|}}
+            {{#get "posts" filter="tags:{{primary_tag.slug}}+id:-{{comment_id}}" limit="3" as |related_posts|}}
                 {{#if related_posts}}
                 <article class="read-next-card">
                     <header class="read-next-card-header">

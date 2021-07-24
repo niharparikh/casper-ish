@@ -753,6 +753,11 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     opacity: 0.8;
 }
 
+.site-header-background:not(.responsive-header-img) .subscribe-button {
+    border: var(--darkgrey) 1px solid;
+    color: var(--darkgrey);
+}
+
 .subscribe-button:hover {
     text-decoration: none;
     opacity: 1;
